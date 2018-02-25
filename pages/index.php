@@ -1,6 +1,6 @@
 <?php
-  include './../init.php';
-  include 'elements/header.php';
+include("../init.php");
+include("elements/header.php");
 ?>
 
 <h1>Startseite des Blogs</h1>
@@ -9,7 +9,6 @@
 <?php 
 $postsRepo = new App\Post\PostsRepository($pdo);
 $result = $postsRepo->fetchPosts();
-var_dump($result);
 ?>
 
 <ul>
