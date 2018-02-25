@@ -1,13 +1,14 @@
 <?php
-  include './../database.php';
+  include './../init.php';
   include 'elements/header.php';
 ?>
 
 <h1>POST.PHP</h1>
 
 <?php
+    $postsRepo = new \App\Post\PostsRepository($pdo);
     $id = $_GET['id'];
-    $post = fetch_post($id);
+    $post = $postsRepo->fetchPost($id);
     //var_dump($post);
 ?>
 

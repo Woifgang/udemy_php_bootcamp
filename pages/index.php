@@ -1,14 +1,16 @@
 <?php
-  include './../database.php';
+  include './../init.php';
   include 'elements/header.php';
 ?>
-
-//123___123___SWAG
 
 <h1>Startseite des Blogs</h1>
 <p class="lead">Das hier ist die Startseite des Blogs.</p>
 
-<?php $result = fetch_posts(); ?>
+<?php 
+$postsRepo = new App\Post\PostsRepository($pdo);
+$result = $postsRepo->fetchPosts();
+var_dump($result);
+?>
 
 <ul>
   <?php foreach ($result as $row): ?>
