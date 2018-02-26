@@ -14,8 +14,8 @@ $result = $postsRepo->fetchPosts();
 <ul>
   <?php foreach ($result as $row): ?>
   <li>
-    <a href="post.php?id=<?php echo $row["id"]; ?>">
-      <?php echo "{$row["title"]}"; ?>
+    <a href="post.php?id=<?php echo $row->id; ?>">
+      <?php echo "{$row->title}"; ?>
     </a>
   </li>
   <?php endforeach; ?>
