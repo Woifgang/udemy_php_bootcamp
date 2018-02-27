@@ -2,10 +2,12 @@
 namespace App\Post;
 
 use PDO;
+//use ArrayAccess;
 
-class PostsRepository
+class PostsRepository //implements ArrayAccess
 {
     private $pdo;
+    public $title;
 
     public function __construct(PDO $pdo)
     {
@@ -25,7 +27,7 @@ class PostsRepository
     $stmt->execute(['id'=>$id]);
     $stmt->setFetchMode(PDO::FETCH_CLASS, "App\\Post\\PostModel");
     $post = $stmt->fetch(PDO::FETCH_CLASS);
-    
+
     return $post;
     }
 }
