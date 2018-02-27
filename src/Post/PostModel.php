@@ -22,12 +22,12 @@ class PostModel implements ArrayAccess
 
     public function offsetSet($offset, $value)
     {
-        return $this->offset = $value;
+        $this->offset = $value;
     }
 
     public function offsetUnset($offset)
     {
-        return $this->offset;
+        unset($this->offset);
     }
 
 
