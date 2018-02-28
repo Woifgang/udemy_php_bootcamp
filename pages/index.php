@@ -7,7 +7,7 @@ include("elements/header.php");
 <p class="lead">Das hier ist die Startseite des Blogs.</p>
 
 <?php 
-$postsRepo = new App\Post\PostsRepository($pdo);
+$postsRepo = $container->make("postsRepository");
 $result = $postsRepo->fetchPosts();
 ?>
 

@@ -2,9 +2,8 @@
 namespace App\Post;
 
 use PDO;
-//use ArrayAccess;
 
-class PostsRepository //implements ArrayAccess
+class PostsRepository 
 {
     private $pdo;
     public $title;

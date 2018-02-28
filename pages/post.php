@@ -6,7 +6,7 @@
 <h1>POST.PHP</h1>
 
 <?php
-    $postsRepo = new \App\Post\PostsRepository($pdo);
+    $postsRepo = $container->make("postsRepository");
     $id = $_GET['id'];
     $post = $postsRepo->fetchPost($id);
     //var_dump($post);
