@@ -56,37 +56,6 @@ class Container
         return $this->instances[$name];
     }
 
-    /*
-    private $pdo;
-    private $postsRepository;
-
-    public function getPdo()
-    {
-        if(!empty($this->pdo))
-        {
-            return $this-pdo;
-        }
-        $this->pdo = new PDO(
-            'mysql:host=localhost; dbname=blog; charset=utf8',
-             'blog',
-             'hXawUvuB3YTtZAu9');
-        
-        $this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); // Schutz vor SQL angriff
-
-        return $this->pdo;
-    }
-
-    public function getPostRepository()
-    {
-        if (!empty($this->postsRepository)) 
-        {
-            return $this->postsRepository;
-        }
-        $this->postsRepository =  new PostsRepository($this->getPdo());
-
-        return $this->postsRepository;
-    }
-    */
 }
 
 ?>
