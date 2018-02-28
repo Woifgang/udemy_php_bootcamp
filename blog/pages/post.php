@@ -1,5 +1,13 @@
 <?php
   include './../init.php';
+
+  $postController = $container->make("postsController");
+  
+  $postController->post();
+
+?>
+  <?php
+  /*
   include 'elements/header.php';
 ?>
 
@@ -20,4 +28,6 @@
 </div>
 
 
-<?php include 'elements/footer.php'; ?>
+<?php include 'elements/footer.php';
+
+*/?>
