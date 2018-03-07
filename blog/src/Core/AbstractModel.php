@@ -4,7 +4,7 @@ namespace App\Core;
 
 use ArrayAccess;
 
-class AbstractModel implements ArrayAccess
+abstract class AbstractModel implements ArrayAccess
 {
     public function offsetExists($offset)
     {

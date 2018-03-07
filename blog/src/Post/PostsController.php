@@ -6,6 +6,8 @@ use App\Core\AbstractController;
 
 class PostsController extends AbstractController
 {
+    private $postsRepository;
+
     public function __construct(PostsRepository $postsRepository)
     {
         $this->postsRepository = $postsRepository;
@@ -15,7 +17,7 @@ class PostsController extends AbstractController
 
     public function index()
     {
-        $posts = $this->postsRepository->fetchPosts();
+        $posts = $this->postsRepository->all();
 
         $this->render("post/index", [
             'posts' => $posts
@@ -26,7 +28,7 @@ class PostsController extends AbstractController
     public function post()
     {
         $id = $_GET['id'];
-        $post = $this->postsRepository->fetchPost($id);
+        $post = $this->postsRepository->find($id);
 
         $this->render("post/show", [
             'post' => $post
