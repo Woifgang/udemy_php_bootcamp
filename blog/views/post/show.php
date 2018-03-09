@@ -18,4 +18,14 @@
   </div>
 </div>
 
+<ul class="list-group">
+    <?php foreach ($comments as $comment): ?>
+        <li class="list-group-item">
+            <?php
+                echo nl2br($comment->content) ;
+            ?>
+        </li>
+    <?php endforeach; ?>
+</ul>
+
 <?php include __DIR__ . "/../layouts/footer.php" ?>

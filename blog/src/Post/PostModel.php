@@ -8,7 +8,6 @@ class PostModel extends AbstractModel
 {
     public $id;
     public $title;
-    public $content;
 
     
 
