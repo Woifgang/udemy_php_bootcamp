@@ -22,6 +22,18 @@ class CommentsRepository extends AbstractRepository
         return"App\\Post\\CommentModel";
     }
 
+    public function insertForPost($postId, $comment)
+    {
+        $table = $this->getTableName();
+        $stmt = $this->pdo->prepare(
+            "INSERT INTO `$table` (`content`, `post_id`) VALUES (:content, :postId)"
+        );
+        $stmt->execute([
+                'content'=>$comment,
+                'postId' => $postId
+            ]);
+    }
+
     function allByPost($id)
     {
         $table = $this->getTableName();
