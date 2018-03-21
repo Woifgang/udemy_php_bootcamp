@@ -2,7 +2,7 @@
 require __DIR__ . "/../init.php";
 
 $pathInfo = $_SERVER['PATH_INFO'];
-var_dump($pathInfo);
+//var_dump($pathInfo);
 
 $routes = [
     '/index' => [
@@ -12,6 +12,10 @@ $routes = [
     '/post' => [
         'controller' => 'postsController',
         'method' => 'post'
+    ],
+    '/login' => [
+        'controller' => 'loginController',
+        'method' => 'login'
     ]
 ];
 

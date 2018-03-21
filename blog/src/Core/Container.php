@@ -2,6 +2,7 @@
 
 namespace App\Core;
 
+use App\Login\LoginController;
 use App\Login\LoginRepository;
 use PDO;
 use Exception;
@@ -37,6 +38,12 @@ class Container
             {
                 return new  CommentsRepository(
                     $this->make("pdo")
+                );
+            },
+            'loginController' => function()
+            {
+                return new LoginController(
+                    $this->make("loginRepository")
                 );
             },
             'loginRepository' => function()
