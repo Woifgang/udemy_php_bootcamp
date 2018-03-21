@@ -2,7 +2,6 @@
 require __DIR__ . "/../init.php";
 
 $pathInfo = $_SERVER['PATH_INFO'];
-//var_dump($pathInfo);
 
 $routes = [
     '/index' => [
