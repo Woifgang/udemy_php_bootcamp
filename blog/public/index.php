@@ -23,10 +23,19 @@ $routes = [
         'controller' => 'loginController',
         'method' => 'dashboard'
     ],
+    '/posts-admin' => [
+        'controller' => 'postsAdminController',
+        'method' => 'showPostEdit'
+    ],
+    '/edit-post' => [
+        'controller' => 'postsAdminController',
+        'method' => 'editPost'
+    ],
     '/logout' => [
         'controller' => 'loginController',
         'method' => 'logout'
     ]
+
 ];
 
 if (isset($routes[$pathInfo]))

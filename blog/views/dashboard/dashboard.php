@@ -9,7 +9,9 @@
 <ul>
     <li>
         <a href="logout" >Logout</a>
-        <a href="logout" >Posts Admin</a>
+    </li>
+    <li>
+        <a href="posts-admin" >Posts Admin</a>
     </li>
 </ul>
 

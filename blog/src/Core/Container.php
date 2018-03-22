@@ -5,6 +5,7 @@ namespace App\Core;
 use App\Login\LoginController;
 use App\Login\LoginRepository;
 use App\Login\LoginService;
+use App\Login\PostsAdminController;
 use PDO;
 use Exception;
 use PDOException;
@@ -22,6 +23,13 @@ class Container
     public function __construct()
     {
         $this->rezepte = [
+            'postsAdminController' => function()
+            {
+                return new PostsAdminController(
+                    $this->make("loginService"),
+                    $this->make("postsRepository")
+                );
+            },
             'postsController' => function()
             {
                 return new PostsController(
