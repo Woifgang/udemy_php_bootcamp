@@ -4,6 +4,7 @@ namespace App\Core;
 
 use App\Login\LoginController;
 use App\Login\LoginRepository;
+use App\Login\LoginService;
 use PDO;
 use Exception;
 use PDOException;
@@ -40,10 +41,16 @@ class Container
                     $this->make("pdo")
                 );
             },
+            'loginService' => function()
+            {
+                return new LoginService(
+                    $this->make("loginRepository")
+                );
+            },
             'loginController' => function()
             {
                 return new LoginController(
-                    $this->make("loginRepository")
+                    $this->make("loginService")
                 );
             },
             'loginRepository' => function()

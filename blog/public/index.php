@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require __DIR__ . "/../init.php";
 
 $pathInfo = $_SERVER['PATH_INFO'];
@@ -15,6 +18,14 @@ $routes = [
     '/login' => [
         'controller' => 'loginController',
         'method' => 'login'
+    ],
+    '/dashboard' => [
+        'controller' => 'loginController',
+        'method' => 'dashboard'
+    ],
+    '/logout' => [
+        'controller' => 'loginController',
+        'method' => 'logout'
     ]
 ];
 
